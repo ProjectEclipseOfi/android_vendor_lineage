@@ -1,7 +1,7 @@
 # EclipseOS Common Configuration
 
 # Include maintainer configuration
-$(call inherit-product, vendor/eclipse/config/maintainer.mk)
+$(call inherit-product, vendor/lineage/eclipse/config/maintainer.mk)
 
 # EclipseOS Version
 ECLIPSE_VERSION := 1.0
@@ -32,15 +32,15 @@ PRODUCT_PACKAGES += \
 
 # Boot Animation
 PRODUCT_COPY_FILES += \
-    vendor/eclipse/bootanimation/bootanimation.zip:$(TARGET_COPY_OUT_PRODUCT)/media/bootanimation.zip
+    vendor/lineage/eclipse/bootanimation/bootanimation.zip:$(TARGET_COPY_OUT_PRODUCT)/media/bootanimation.zip
 
 # Overlays
 PRODUCT_PACKAGE_OVERLAYS += \
-    vendor/eclipse/overlay/common
+    vendor/lineage/eclipse/overlay/common
 
 # Permissions
 PRODUCT_COPY_FILES += \
-    vendor/eclipse/config/permissions/privapp-permissions-eclipse.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-eclipse.xml
+    vendor/lineage/eclipse/config/permissions/privapp-permissions-eclipse.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-eclipse.xml
 
 # Inherit from LineageOS
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
