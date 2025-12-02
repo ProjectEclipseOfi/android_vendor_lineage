@@ -9,24 +9,15 @@ ECLIPSE_BUILD_TYPE ?= OFFICIAL
 
 # EclipseOS Properties
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.eclipse.version=$(ECLIPSE_VERSION) \
-    ro.eclipse.build.type=$(ECLIPSE_BUILD_TYPE) \
-    ro.eclipse.device=$(ECLIPSE_BUILD) \
     ro.modversion=EclipseOS-$(ECLIPSE_VERSION)-$(ECLIPSE_BUILD)-$(shell date +%Y%m%d) \
-    ro.eclipse.display.version=EclipseOS-$(ECLIPSE_VERSION)
 
 # Privacy-First Features
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.eclipse.privacy.mode=true \
-    ro.eclipse.telemetry.enabled=false
 
 # Performance Optimizations
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.eclipse.performance.optimized=true \
-    ro.eclipse.kernel.tweaks=enabled
 
 # EclipseOS Apps
-PRODUCT_PACKAGES += EclipseOSLauncher EclipseOSSettings
 PRODUCT_PACKAGES += \
 
 # Boot Animation
@@ -43,3 +34,63 @@ TARGET_RELEASETOOLS_EXTENSIONS := vendor/lineage/eclipse/releasetools
 TARGET_OTA_ASSERT_DEVICE := $(TARGET_DEVICE)
 # Eclipse ZIP NAME
 TARGET_FILE_NAME := EclipseOS-$(ECLIPSE_VERSION)-$(TARGET_DEVICE)-OFFICIAL.zip
+
+include vendor/eclipse/config/version.mk
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \n    ro.eclipse.version=$(ECLIPSE_VERSION) \n    ro.eclipse.build.type=$(ECLIPSE_BUILD_TYPE)
+
+# ==== EclipseOS System Props ====
+include vendor/eclipse/config/version.mk
+
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    ro.eclipse.version=$(ECLIPSE_VERSION) \
+    ro.eclipse.build.type=$(ECLIPSE_BUILD_TYPE) \
+    ro.eclipse.device=$(ECLIPSE_DEVICE)
+
+# EclipseOS Apps
+PRODUCT_PACKAGES += \
+    EclipseOSLauncher \
+    EclipseOSSettings
+
+# EclipseOS privileged apps
+PRODUCT_SYSTEM_EXT_PRIV_APP += \
+    EclipseOSLauncher \
+    EclipseOSSettings
+
+
+# ==== EclipseOS System Props ====
+include vendor/eclipse/config/version.mk
+
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    ro.eclipse.version=$(ECLIPSE_VERSION) \
+    ro.eclipse.build.type=$(ECLIPSE_BUILD_TYPE) \
+    ro.eclipse.device=$(ECLIPSE_DEVICE)
+
+# EclipseOS Apps
+PRODUCT_PACKAGES += \
+    EclipseOSLauncher \
+    EclipseOSSettings
+
+# EclipseOS privileged apps
+PRODUCT_SYSTEM_EXT_PRIV_APP += \
+    EclipseOSLauncher \
+    EclipseOSSettings
+
+
+# ==== EclipseOS System Props ====
+include vendor/eclipse/config/version.mk
+
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    ro.eclipse.version=$(ECLIPSE_VERSION) \
+    ro.eclipse.build.type=$(ECLIPSE_BUILD_TYPE) \
+    ro.eclipse.device=$(ECLIPSE_DEVICE)
+
+# EclipseOS Apps
+PRODUCT_PACKAGES += \
+    EclipseOSLauncher \
+    EclipseOSSettings
+
+# EclipseOS privileged apps
+PRODUCT_SYSTEM_EXT_PRIV_APP += \
+    EclipseOSLauncher \
+    EclipseOSSettings
+
