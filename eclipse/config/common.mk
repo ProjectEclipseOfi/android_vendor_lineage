@@ -30,8 +30,6 @@ PRODUCT_PACKAGES += EclipseOSLauncher EclipseOSSettings
 PRODUCT_PACKAGES += \
 
 # Boot Animation
-PRODUCT_COPY_FILES += \
-PRODUCT_COPY_FILES += vendor/lineage/eclipse/config/permissions/privapp-permissions-eclipse.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-eclipse.xml
     vendor/lineage/eclipse/bootanimation/bootanimation.zip:$(TARGET_COPY_OUT_PRODUCT)/media/bootanimation.zip
 
 # Overlays
@@ -39,11 +37,8 @@ PRODUCT_PACKAGE_OVERLAYS += \
     vendor/lineage/eclipse/overlay/common
 
 # Permissions
-PRODUCT_COPY_FILES += \
-PRODUCT_COPY_FILES += vendor/lineage/eclipse/config/permissions/privapp-permissions-eclipse.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-eclipse.xml
 
 # Inherit from LineageOS
-$(call inherit-product, vendor/lineage/config/common_mobile.mk)
 TARGET_RELEASETOOLS_EXTENSIONS := vendor/lineage/eclipse/releasetools
 TARGET_OTA_ASSERT_DEVICE := $(TARGET_DEVICE)
 # Eclipse ZIP NAME
