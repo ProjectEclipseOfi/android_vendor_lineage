@@ -2,7 +2,7 @@
 $(call inherit-product-if-exists, vendor/extra/product.mk)
 
 # Include EclipseOS configuration
-$(call inherit-product-if-exists, vendor/lineage/eclipse/config/common.mk)
+$(call inherit-product-if-exists, vendor/eclipse/config/common.mk)
 
 # Allow vendor prebuilt repos to exclude themselves from bp scanning
 -include $(sort $(wildcard vendor/*/*/exclude-bp.mk))
