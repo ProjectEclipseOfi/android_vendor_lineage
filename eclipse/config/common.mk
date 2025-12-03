@@ -17,11 +17,15 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 # Performance Optimizations
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 
+# Boot Animation - Use EclipseOS bootanimation instead of LineageOS
+PRODUCT_PACKAGES += \
+    vendor/lineage/eclipse/bootanimation/bootanimation.zip:$(TARGET_COPY_OUT_PRODUCT)/media/bootanimation.zip
+PRODUCT_PACKAGES -= \
+    bootanimation.zip \
+    bootanimation-dark.zip
+
 # EclipseOS Apps
 PRODUCT_PACKAGES += \
-
-# Boot Animation
-    vendor/lineage/eclipse/bootanimation/bootanimation.zip:$(TARGET_COPY_OUT_PRODUCT)/media/bootanimation.zip
 
 # Overlays
 PRODUCT_PACKAGE_OVERLAYS += \
